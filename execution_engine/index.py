@@ -9,7 +9,7 @@ app = Flask(__name__)
 def decision(): 
     try:
         decision = decide(get_policy(), request.get_json())
-        return jsonify(decision), 200
+        return jsonify(decision = decision), 200
     except ValueError as e:
         return f"Invalid operand on database: {str(e)}", 500
     except KeyError as e:
