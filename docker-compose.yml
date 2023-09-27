@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  execution-engine:
+    image: execution_engine
+    environment:
+      DB_PATH: "./policy_db/policy.db"
+      SELECT_POLICIES_QUERY: "SELECT * FROM policy"
+    ports:
+      - 5000:5000
+    volumes:
+      - ./policy_db:/usr/share/script/policy_db
+
+volumes:
+  policy_db:
