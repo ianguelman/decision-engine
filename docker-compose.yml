@@ -7,9 +7,14 @@ services:
       DB_PATH: "./policy_db/policy.db"
       SELECT_POLICIES_QUERY: "SELECT * FROM policy"
     ports:
-      - 5000:5000
+      - 5001:5000
     volumes:
       - ./policy_db:/usr/share/script/policy_db
+  
+  config-frontend:
+    image: config_frontend
+    ports:
+      - 3000:3000
 
 volumes:
   policy_db:
