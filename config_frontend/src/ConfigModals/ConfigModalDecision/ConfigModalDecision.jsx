@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 
 import CloseIcon from "@mui/icons-material/Close";
 
-import "./ConfigModelDecision.css";
+import "./ConfigModalDecision.css";
 import { IconButton, MenuItem, TextField } from "@mui/material";
 
 const comparisonValues = [">", ">=", "==", "<=", "<"];

@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 
 import CloseIcon from "@mui/icons-material/Close";
 
-import "./ConfigModelReturn.css";
+import "./ConfigModalReturn.css";
 import { IconButton, MenuItem, TextField } from "@mui/material";
 
 const returnValues = ["true", "false"];

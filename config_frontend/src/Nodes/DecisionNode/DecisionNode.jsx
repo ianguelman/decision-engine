@@ -4,7 +4,7 @@ import { Handle, Position, getConnectedEdges, useStore } from "reactflow";
 import useStoreState from "../../store/store";
 
 import "./DecisionNode.css";
-import ConfigModalDecision from "../../ConfigModals/ConfigModalDecision/ConfigModelDecision";
+import ConfigModalDecision from "../../ConfigModals/ConfigModalDecision/ConfigModalDecision";
 
 const selector =
   (nodeId, isConnectable, handleId, maxConnections = 1) =>

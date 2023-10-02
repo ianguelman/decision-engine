@@ -4,7 +4,7 @@ import { Handle, Position } from "reactflow";
 import useStoreState from "../../store/store";
 
 import "./ReturnNode.css";
-import ConfigModalReturn from "../../ConfigModals/ConfigModalReturn/ConfigModelReturn";
+import ConfigModalReturn from "../../ConfigModals/ConfigModalReturn/ConfigModalReturn";
 
 const ReturnNode = ({ data, id, isConnectable }) => {
   const updateNodeData = useStoreState((state) => state.updateNodeData);
