@@ -6,7 +6,7 @@ import initialEdges from "./edges";
 
 const useStore = create((set, get) => ({
   nodes: JSON.parse(localStorage.getItem("policyFlow@nodes")) ?? initialNodes,
-  
+
   setNodes: (nodes) => {
     set({
       nodes: nodes,
@@ -49,6 +49,16 @@ const useStore = create((set, get) => ({
         },
         get().edges
       ),
+    });
+
+    set({
+      nodes: get().nodes.map((node) => {
+        if (node.id === connection.source) {
+          node.data[connection.sourceHandle.replace("start", "onTrue")] = connection.target;
+        }
+
+        return node;
+      }),
     });
   },
   
