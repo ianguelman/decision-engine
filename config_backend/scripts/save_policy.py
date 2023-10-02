@@ -39,7 +39,7 @@ def run(policy):
 def format_value(value):
     if value is None:
         return 'NULL'
-    elif isinstance(value, bool):
+    elif isinstance(value, bool) or value == "true" or value == "false":
         return str(value).upper()
     else:
         return f"'{value}'"
