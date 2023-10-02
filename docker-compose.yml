@@ -7,7 +7,7 @@ services:
       DB_PATH: "./policy_db/policy.db"
       SELECT_POLICIES_QUERY: "SELECT * FROM policy"
     ports:
-      - 5001:5000
+      - 5001:5001
     volumes:
       - policy_db:/usr/share/script/policy_db
 
@@ -15,6 +15,8 @@ services:
     depends_on:
     - config-backend
     image: config_frontend
+    environment:
+      WDS_SOCKET_PORT: 0
     ports:
       - 3000:3000
 
@@ -28,7 +30,7 @@ services:
       DELETE_POLICIES_QUERY: "DELETE FROM policy"
       INSERT_POLICY_QUERY: "INSERT INTO policy VALUES ({},{},{},{},{},{},{},{})"
     ports:
-      - 5002:5000
+      - 5002:5002
     volumes:
       - policy_db:/usr/share/script/policy_db
 

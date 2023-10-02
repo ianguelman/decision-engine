@@ -1,9 +1,11 @@
 from flask import Flask, request
+from flask_cors import CORS
 
 from scripts.process_flow import run as process_flow
 from scripts.save_policy import run as save_policy
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/policy/publish", methods=["POST"])
