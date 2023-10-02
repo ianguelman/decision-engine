@@ -9,12 +9,33 @@ services:
     ports:
       - 5001:5000
     volumes:
-      - ./policy_db:/usr/share/script/policy_db
-  
+      - policy_db:/usr/share/script/policy_db
+
   config-frontend:
+    depends_on:
+    - config-backend
     image: config_frontend
     ports:
       - 3000:3000
 
+  config-backend:
+    depends_on:
+      - execution-engine
+    image: config_backend
+    environment:
+      SELECT_POLICIES_QUERY: "SELECT * FROM policy"
+      DB_PATH: "./policy_db/policy.db"
+      DELETE_POLICIES_QUERY: "DELETE FROM policy"
+      INSERT_POLICY_QUERY: "INSERT INTO policy VALUES ({},{},{},{},{},{},{},{})"
+    ports:
+      - 5002:5000
+    volumes:
+      - policy_db:/usr/share/script/policy_db
+
 volumes:
   policy_db:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./policy_db
