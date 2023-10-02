@@ -3,7 +3,7 @@ const initialNodes = [
     id: "9ca89130-225a-4d05-9c50-161863b28511",
     type: "start",
     position: { x: 400, y: 100 },
-    data: { label: "START", onTrue: "56ce727e-c15a-4e7c-b05f-aa9837f6be25" },
+    data: { label: "START", onTrue: "56ce727e-c15a-ß4e7c-b05f-aa9837f6be25" },
     width: 110,
     height: 70,
     selected: false,

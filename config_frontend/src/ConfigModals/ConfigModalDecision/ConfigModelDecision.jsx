@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./ConfigModelDecision.css";
 import { IconButton, MenuItem, TextField } from "@mui/material";
 
-const comparisonValues = [">", ">=", "=", "<=", "<"];
+const comparisonValues = [">", ">=", "==", "<=", "<"];
 
 const ConfigModalDecision = ({
   open,
