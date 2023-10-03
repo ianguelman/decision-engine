@@ -6,4 +6,6 @@ COPY . ./
 
 RUN yarn
 
-ENTRYPOINT [ "yarn", "start" ]
+RUN yarn test --watchAll=false
+
+ENTRYPOINT ["yarn", "start"]
